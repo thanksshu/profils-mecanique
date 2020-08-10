@@ -1,551 +1,518 @@
 @startuml Profils spécifiques des filières mécanique
-' Classe
-object TM {
-    Techniques et Méthodes
-}
 
-object CS {
-    Connaissances scientifiques
-}
-
-object Printemps
-object Automne
+note "A 代表秋季" as N1
+note "P 代表春季" as N2
+note "TM 为 Techniques et Méthodes" as N3
+note "CS 为 Connaissances scientifiques" as N4
 
 ' Filières
-object AVI {
+object AVI #Red {
     Acoustique et vibrations pour l'ingénieur
 }
 
-object CMI {
+object CMI #Blue {
     Conception mécanique intégrée
 }
 
-object FQI {
+object FQI #Yellow {
     Fiabilité et qualité industrielle
 }
 
-object IDI {
+object IDI #Green {
     Ingénierie du design industriel
 }
 
-object MARS {
+object MARS #Violet {
     Mécatronique, actionneurs, robotisation et systèmes
 }
 
-object MIT {
+object MIT #Orange {
     Matériaux et innovation technologique
 }
 
-object PIL {
+object PIL #Crimson {
     Production intégrée et logistique
 }
 
-object SIM {
+object SIM #Orchid {
     Simulation pour l’ingénierie mécanique
 }
 
-object MPI {
+object MPI #Teal {
     Management de projets innovants
 }
 
 'UVs
+
+object SY06
+object PS09
+object NF04
+object MQ01
+object PS22
+object SY03
+object DI05
+object SY04
+object EN21
+object EL02
+object GE37
+object DI01
+object DI02
+object MQ17
+object MT23
+object MT90
+object MC03
+object MC04
+object SY01
+object SY02
+object GE25
+object TN01
+object TN03
+object PS21
+object TN20
+object TN06
+object MQ03
+object BL40
+object PS91
+object TN22
+
+object TN02
+TN01 <|-- TN02
+TN03 <|-- TN02 : conseillé
+
+object PS04
+MT90 <|-- PS04
+
+object PS94
+MT90 <|-- PS94
+
+object MQ02
+MQ01 <|-- MQ02
+
+object MQ06
+MQ01 <|-- MQ06 : ou MQ02
+MQ02 <|-- MQ06 : ou MQ01
+
+object MQ18
+PS21 <|-- MQ18
+TN06 <|-- MQ18
+PS22 <|-- MQ18
+
+' object MQ01
+TN06 <|-- MQ01
+PS91 <|-- MQ01
+
+object TN12
+TN02 <|-- TN12 : (TN03-TN06-MQ01) ou TN22
+TN22 <|-- TN12 : (TN23-MQ01) ou TN02
+
+object MC05
+PS04 <|-- MC05
+
+' object EL02
+PS94 <|-- EL02
+MT23 <|-- EL02
+
+object BM07
+MQ17 <|-- BM07
+BL40 <|-- BM07
+
+'Automne 2019 - Techniques et Méthodes
 object AM23 {
-    Système de production et usine numérique (apprentissage)
-    6
+    6 A TM
 }
 
 object AP51 {
-    Atelier projet conception mécaniqueintégrée
-    8
+    8 A TM
 }
+
+MQ10 <|--  AP51
+TN12 <|--  AP51
+TN13 <|--  AP51
+TN20 <|--  AP51
+
+MS02 <|-- AP51
+SY04 <|-- AP51
+SY03 <|-- AP51
+GE37 <|-- AP51
+MQ03 <|-- AP51
+MQ18 <|-- AP51
+MQ06 <|-- AP51
+TN21 <|-- AP51
+TN14 <|-- AP51
+DI05 <|-- AP51
 
 object AP52 {
-    Modélisation - optimisation desproduits et structures
-    8
+    8 A TM
 }
 
+MQ01 <|-- AP52
+MQ02 <|-- AP52
+MQ06 <|-- AP52
 
+MQ16 --  AP52
+MQ19 --  AP52
+MQ14 --  AP52
+BM08 --  AP52
 
 object AP53 {
-    Production intégrée et logistique
-    8
+    8 A TM
 }
 
 object CF04 {
-    Mécanique des fluides numérique etcouplages multiphysiques
-    6
-
+    6 A TM
 }
 
 object DI04 {
-    Design packaging
-    6
-
+    6 A TM
 }
+
+DI02 <|-- DI04
+DI03 <|-- DI04
+TN08 <|-- DI04
 
 object DI08 {
-    Design industriel et création deproduits
-    6
-
+    6 A TM
 }
 
-object EG01 {
-    Ergonomie
-    6
-
-}
+TN08 <|-- DI08
+DI03 <|-- DI08
+EG01 <|-- DI08
 
 object FQ03 {
-    Conception robuste et plansd'expériences
-    6
-
+    6 A TM
 }
 
 object FQ07 {
-    Stratégie de maintenance industrielle
-    6
-
+    6 A TM
 }
 
-object GE38 {
-    Management et outils d'aide à lacréativité industrielle et à l'innovation
-    6
+SY01 <|-- FQ07
+SY02 <|-- FQ07
+FQ05 <|-- FQ07 : conseillé
 
+object GE38 {
+    6 A TM
 }
 
 object GE39 {
-    Management et marketing del'innovation
-    6
-
+    6 A TM
 }
 
 object GE40 {
-    Management de projets
-    6
-
+    6 A TM
 }
 
-object MC02 {
-    Entraînements électriques à vitessevariable
-    6
+GE37 <|-- GE40
 
+object MC02 {
+    6 A TM
 }
 
 object MC06 {
-    Modélisation, dimensionnement,réglages d'axes électromécaniques
-    6
-
+    6 A TM
 }
+
+SY04 <|-- MC06
 
 object MC08 {
-    Ingénierie robotique et actionneursélectriques
-    6
-
+    6 A TM
 }
 
-object MP03 {
-    Supply chain management (Gestion dela chaîne logistique)
-    6
+MC01 <|-- MC08
+MC02 <|-- MC08
+MC03 <|-- MC08
+MC04 <|-- MC08
+MC05 <|-- MC08
+MC06 <|-- MC08
+MC07 <|-- MC08
 
+object MP03 {
+    6 A TM
 }
 
 object MQ05 {
-    Tribologie
-    6
-
+    6 A TM
 }
 
 object MQ07 {
-    Matériaux pour applications hautestempératures
-    6
-
+    6 A TM
 }
 
-object MQ12 {
-    Choix des matériaux et des procédés
-    6
+BM07 <|-- MQ07
 
+object MQ12 {
+    6 A TM
 }
 
 object MQ13 {
-    Matériaux composites
-    6
-
+    6 A TM
 }
 
 object MQ16 {
-    Éléments finis pour la modélisation decrash et l'analyse d'impacts
-    6
-
+    6 A TM
 }
+
+MQ02 <|-- MQ16
+NF04 <|-- MQ16
+MQ06 <|-- MQ16
 
 object MS03 {
-    Atelier projet en acoustique etvibrations
-    6
-
+    6 A TM
 }
 
-object PR00 {
-    Réalisation de projet
-    5
+PS09 <|-- MS03
+MQ03 <|-- MS03
+SY06 <|-- MS03
 
+object PR00 {
+    5 A TM
 }
 
 object PS12 {
-    Acoustique des salles : matériaux etmodélisation
-    6
-
+    6 A TM
 }
+
+PS09 <|-- PS12 #Green
+NF04 <|-- PS12 #Green
 
 object PS13 {
-    Simulation numérique envibroacoustique
-    6
-
+    6 A TM
 }
 
-object TN08 {
-    Dessin de communication
-    6
+PS09 <|-- PS13
+NF04 <|-- PS13
 
+object TN08 {
+    6 A TM
 }
 
 object TN14 {
-    Commande hydraulique de puissance
-    6
-
+    6 A TM
 }
+
+TN12 <|-- TN14
+TN13 <|-- TN14
+SY04 <|-- TN14
 
 object TN21 {
-    Gestion du cycle de vie du produit etingénierie collaborative
-    6
-
+    6 A TM
 }
 
-object TX00 {
-    Étude expérimentale
-    5
+TN20 <|-- TN21
+TN12 <|-- TN21
 
+object TX00 {
+    5 A TM
 }
 
 'Printemps 2020  - Connaissances scientifiques
 object MC01 {
-    Machines électriques
-    6
-
+    6 P CS
 }
 
 object PS05 {
-    Acoustique physique : sourcessonores et propagation
-    6
-
+    6 P CS
 }
+
+MQ03 <|-- PS05 #Yellow
+PS09 <|-- PS05 #Yellow
 
 object SY09 {
-    Analyse de données et data mining
-    6
-
+    6 P CS
 }
+
+SY02 <|-- SY09
 
 'Printemps 2020  - Techniques et Méthodes
 object BM08 {
-    Modélisation des systèmes biomécaniques
-    5
-
+    5 P TM
 }
 
 object BZ08 {
-    Modélisation des systèmes biomécaniques
-    5
-
+    5 P TM
 }
 
 object CT02 {
-    Maîtrise statistique des processus
-    6
-
+    6 P TM
 }
 
 object DI03 {
-    Conception formelle des produits
-    6
-
+    6 P TM
 }
 
-object DI06 {
-    Analyse des produits deconsommation
-    6
+DI01 <|-- DI03 : ou DI02
+DI02 <|-- DI03
 
+object DI06 {
+    6 P TM
 }
 
 object EG01 {
-    Ergonomie
-    6
-
+    6 P TM
 }
 
 object EN14 {
-    Fonctions électroniques pourl'ingénieur
-    6
-
+    6 P TM
 }
+
+EN21 <|-- EG01
 
 object FQ05 {
-    Fiabilité industrielle
-    6
-
-}
-
-object GE38 {
-    Management et outils d'aide à lacréativité industrielle et à l'innovation
-    6
-
-}
-
-object GE39 {
-    Management et marketing del'innovation
-    6
-
+    6 P TM
 }
 
 object MC07 {
-    Électronique de puissance
-    6
-
+    6 P TM
 }
+
+EN21 <|-- MC07
+EL02 <|-- MC07
 
 object MP02 {
-    Introduction aux méthodes de la GPAO
-    6
-
+    6 P TM
 }
 
-object MQ04 {
-    Polymères
-    6
+GE25 <|-- MP02
 
+object MQ04 {
+    6 P TM
 }
 
 object MQ08 {
-    Élaboration et propriétés d'usage desmétaux
-    6
-
+    6 P TM
 }
+
+MQ17 <|-- MQ08
 
 object MQ10 {
-    Comportement mécanique desmatériaux
-    6
-
+    6 P TM
 }
 
-object MQ14 {
-    Optimisation en mécanique
-    6
+MQ17 <|-- MQ10 : conseillé
+MQ02 <|-- MQ10 : conseillé
 
+object MQ14 {
+    6 P TM
 }
 
 object MQ19 {
-    Dynamique des structures
-    6
-
+    6 P TM
 }
+
+MQ03 <|-- MQ19
+MQ06 <|-- MQ19 : ou NF04
+NF04 <|-- MQ19 : ou MQ06
+MQ01 <|-- MQ19
+MQ02 <|-- MQ19
 
 object MS02 {
-    Principes physiques des capteurs etinstrumentation
-    6
-
+    6 P TM
 }
 
-object MS03 {
-    Atelier projet en acoustique etvibrations
-    6
-
-}
+EN21 <|-- MS02 : conseillé mais pas obligatoire
 
 object NF15 {
-    Microprocesseurs, interfaces etlogiciels de base
-    6
-
-}
-
-object PR00 {
-    Réalisation de projet
-    5
-
+    6 P TM
 }
 
 object SY12 {
-    简介=" Modélisation et performance dessystèmes de production"
-    分数="6"
-
-}
-object TN08 {
-    Dessin de communication
-    6
-
+    6 P TM
 }
 
 object TN13 {
-    Dimensionnement pour la conceptiondes systèmes mécaniques
-    6
-
+    6 P TM
 }
+
+MQ01 <|-- TN13 #Blue
+MQ03 <|-- TN13 #Blue : ou MQ18 fortement conseillée
+MQ18 <|-- TN13 #Blue : ou MQ03 fortement conseillée
+NF04 <|-- TN13 #Blue : ou MQ06 conseillée
+MQ06 <|-- TN13 #Blue : ou NF04 conseillée
+TN12 <|-- TN13 #Blue : conseillée
 
 object TN24 {
-    Technologies de fabrication et outilsméthodes
-    6
-
+    6 P TM
 }
-
-object TX00 {
-    Étude expérimentale
-    5
-
-}
-
-'学期
-
-Automne *-- AM23
-Automne *-- AP51
-Automne *-- AP52
-Automne *-- AP53
-Automne *-- CF04
-Automne *-- DI04
-Automne *-- DI08
-Automne *-- EG01
-Automne *-- FQ03
-Automne *-- FQ07
-Automne *-- GE38
-Automne *-- GE39
-Automne *-- GE40
-Automne *-- MC02
-Automne *-- MC06
-Automne *-- MC08
-Automne *-- MP03
-Automne *-- MQ05
-Automne *-- MQ07
-Automne *-- MQ12
-Automne *-- MQ13
-Automne *-- MQ16
-Automne *-- MS03
-Automne *-- PR00
-Automne *-- PS12
-Automne *-- PS13
-
-'种类
-TM *-- AM23
-TM *-- AP51
-TM *-- AP52
-TM *-- AP53
-TM *-- CF04
-TM *-- DI04
-TM *-- DI08
-TM *-- EG01
-TM *-- FQ03
-TM *-- FQ07
-TM *-- GE38
-TM *-- GE39
-TM *-- GE40
-TM *-- MC02
-TM *-- MC06
-TM *-- MC08
-TM *-- MP03
-TM *-- MQ05
-TM *-- MQ07
-TM *-- MQ12
-TM *-- MQ13
-TM *-- MQ16
-TM *-- MS03
-TM *-- PR00
-TM *-- PS12
-TM *-- PS13
 
 '依赖关系
 'AVI
-MS03 *-- AVI
-PS12 *-- AVI
-PS13 *-- AVI
-PS05 *-- AVI
-MQ19 *-- AVI
-MS03 *-- AVI
+MS03 *-- AVI #Red
+PS12 *-- AVI #Red
+PS13 *-- AVI #Red
+PS05 *-- AVI #Red
+MQ19 *-- AVI #Red
 
 'CMI
-AP51 *-- CMI
-MQ05 *-- CMI
-TN14 *-- CMI
-TN21 *-- CMI
-MS02 *-- CMI
-TN13 *-- CMI
-TN24 *-- CMI
+AP51 *-- CMI #Blue
+MQ05 *-- CMI #Blue
+TN14 *-- CMI #Blue
+TN21 *-- CMI #Blue
+MS02 *-- CMI #Blue
+TN13 *-- CMI #Blue
+TN24 *-- CMI #Blue
 
 'FQI
-EG01 *-- FQI
-FQ03 *-- FQI
-FQ07 *-- FQI
-MQ05 *-- FQI
-SY09 *-- FQI
-CT02 *-- FQI
-EG01 *-- FQI
-FQ05 *-- FQI
+EG01 *-- FQI #Yellow
+FQ03 *-- FQI #Yellow
+FQ07 *-- FQI #Yellow
+MQ05 *-- FQI #Yellow
+SY09 *-- FQI #Yellow
+CT02 *-- FQI #Yellow
+FQ05 *-- FQI #Yellow
 
 'IDI
-DI04 *-- IDI
-DI08 *-- IDI
-EG01 *-- IDI
-MQ12 *-- IDI
-TN08 *-- IDI
-DI03 *-- IDI
-DI06 *-- IDI
-EG01 *-- IDI
-TN08 *-- IDI
+DI04 *-- IDI #Green
+DI08 *-- IDI #Green
+EG01 *-- IDI #Green
+MQ12 *-- IDI #Green
+TN08 *-- IDI #Green
+DI03 *-- IDI #Green
+DI06 *-- IDI #Green
 
 'MARS
-MC02 *-- MARS
-MC06 *-- MARS
-MC08 *-- MARS
-MC01 *-- MARS
-EN14 *-- MARS
-MC07 *-- MARS
-NF15 *-- MARS
+MC02 *-- MARS #Violet
+MC06 *-- MARS #Violet
+MC08 *-- MARS #Violet
+MC01 *-- MARS #Violet
+EN14 *-- MARS #Violet
+MC07 *-- MARS #Violet
+NF15 *-- MARS #Violet
 
 'MIT
-MQ05 *-- MIT
-MQ07 *-- MIT
-MQ12 *-- MIT
-MQ13 *-- MIT
-MQ04 *-- MIT
-MQ08 *-- MIT
-MQ10 *-- MIT
+MQ05 *-- MIT #Orange
+MQ07 *-- MIT #Orange
+MQ12 *-- MIT #Orange
+MQ13 *-- MIT #Orange
+MQ04 *-- MIT #Orange
+MQ08 *-- MIT #Orange
+MQ10 *-- MIT #Orange
 
 'MPI
-TX00 *-- MPI
-PR00 *-- MPI
-GE39 *-- MPI
-GE38 *-- MPI
-TX00 *-- MPI
-GE38 *-- MPI
-GE39 *-- MPI
-GE40 *-- MPI
-PR00 *-- MPI
+TX00 *-- MPI #Teal
+PR00 *-- MPI #Teal
+GE38 *-- MPI #Teal
+GE39 *-- MPI #Teal
+GE40 *-- MPI #Teal
 
 'PIL
-AM23 *-- PIL
-AP53 *-- PIL
-MP03 *-- PIL
-CT02 *-- PIL
-FQ05 *-- PIL
-MP02 *-- PIL
-MS02 *-- PIL
-SY12 *-- PIL
-TN24 *-- PIL
+AM23 *-- PIL #Crimson
+AP53 *-- PIL #Crimson
+MP03 *-- PIL #Crimson
+CT02 *-- PIL #Crimson
+FQ05 *-- PIL #Crimson
+MP02 *-- PIL #Crimson
+MS02 *-- PIL #Crimson
+SY12 *-- PIL #Crimson
+TN24 *-- PIL #Crimson
 
 'SIM
-MQ19 *-- SIM
-MQ14 *-- SIM
-BZ08 *-- SIM
-BM08 *-- SIM
-MQ16 *-- SIM
-MQ13 *-- SIM
-CF04 *-- SIM
-AP52 *-- SIM
+MQ19 *-- SIM #Orchid
+MQ14 *-- SIM #Orchid
+BZ08 *-- SIM #Orchid
+BM08 *-- SIM #Orchid
+MQ16 *-- SIM #Orchid
+MQ13 *-- SIM #Orchid
+CF04 *-- SIM #Orchid
+AP52 *-- SIM #Orchid
 
 @enduml
