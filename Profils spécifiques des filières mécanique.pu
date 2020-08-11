@@ -1,5 +1,9 @@
 @startuml Profils spécifiques des filières mécanique
 
+skinparam arrowThickness 3
+skinparam nodesep 50
+skinparam ranksep 200
+
 note "A 代表秋季" as N1
 note "P 代表春季" as N2
 note "TM 为 Techniques et Méthodes" as N3
@@ -90,7 +94,7 @@ MQ01 <|-- MQ02
 
 object MQ06
 MQ01 <|-- MQ06 : ou MQ02
-MQ02 <|-- MQ06 : ou MQ01
+' MQ02 <|-- MQ06 : ou MQ01
 
 object MQ18
 PS21 <|-- MQ18
@@ -125,21 +129,21 @@ object AP51 {
     8 A TM
 }
 
-MQ10 <|--  AP51
-TN12 <|--  AP51
-TN13 <|--  AP51
-TN20 <|--  AP51
+MQ10 <|-- AP51 #Black
+TN12 <|-- AP51 #Black
+TN13 <|-- AP51 #Black
+' TN20 <|-- AP51 #Black
 
-MS02 <|-- AP51
-SY04 <|-- AP51
-SY03 <|-- AP51
-GE37 <|-- AP51
-MQ03 <|-- AP51
-MQ18 <|-- AP51
-MQ06 <|-- AP51
-TN21 <|-- AP51
-TN14 <|-- AP51
-DI05 <|-- AP51
+MS02 <|-- AP51 #Black
+SY04 <|-- AP51 #Black
+SY03 <|-- AP51 #Black
+GE37 <|-- AP51 #Black
+MQ03 <|-- AP51 #Black
+MQ18 <|-- AP51 #Black
+MQ06 <|-- AP51 #Black
+TN21 <|-- AP51 #Black
+TN14 <|-- AP51 #Black
+DI05 <|-- AP51 #Black
 
 object AP52 {
     8 A TM
@@ -166,7 +170,7 @@ object DI04 {
     6 A TM
 }
 
-DI02 <|-- DI04
+' DI02 <|-- DI04
 DI03 <|-- DI04
 TN08 <|-- DI04
 
@@ -218,13 +222,13 @@ object MC08 {
     6 A TM
 }
 
-MC01 <|-- MC08
-MC02 <|-- MC08
-MC03 <|-- MC08
-MC04 <|-- MC08
-MC05 <|-- MC08
-MC06 <|-- MC08
-MC07 <|-- MC08
+MC01 <|-- MC08 #SkyBlue
+MC02 <|-- MC08 #SkyBlue
+MC03 <|-- MC08 #SkyBlue
+MC04 <|-- MC08 #SkyBlue
+MC05 <|-- MC08 #SkyBlue
+MC06 <|-- MC08 #SkyBlue
+MC07 <|-- MC08 #SkyBlue
 
 object MP03 {
     6 A TM
@@ -252,9 +256,9 @@ object MQ16 {
     6 A TM
 }
 
-MQ02 <|-- MQ16
-NF04 <|-- MQ16
-MQ06 <|-- MQ16
+MQ02 <|-- MQ16 #DarkBlue
+NF04 <|-- MQ16 #DarkBlue
+MQ06 <|-- MQ16 #DarkBlue
 
 object MS03 {
     6 A TM
@@ -279,8 +283,8 @@ object PS13 {
     6 A TM
 }
 
-PS09 <|-- PS13
-NF04 <|-- PS13
+PS09 <|-- PS13 #DeepSkyBlue
+NF04 <|-- PS13 #DeepSkyBlue
 
 object TN08 {
     6 A TM
@@ -388,8 +392,8 @@ object MQ10 {
     6 P TM
 }
 
-MQ17 <|-- MQ10 : conseillé
-MQ02 <|-- MQ10 : conseillé
+MQ17 -- MQ10 #DarkOliveGreen : conseillé
+MQ02 -- MQ10 #DarkOliveGreen : conseillé
 
 object MQ14 {
     6 P TM
@@ -399,11 +403,11 @@ object MQ19 {
     6 P TM
 }
 
-MQ03 <|-- MQ19
-MQ06 <|-- MQ19 : ou NF04
-NF04 <|-- MQ19 : ou MQ06
-MQ01 <|-- MQ19
-MQ02 <|-- MQ19
+MQ03 <|-- MQ19 #YellowGreen
+MQ06 <|-- MQ19 #YellowGreen : ou NF04
+NF04 <|-- MQ19 #YellowGreen : ou MQ06
+MQ01 <|-- MQ19 #YellowGreen
+MQ02 <|-- MQ19 #YellowGreen
 
 object MS02 {
     6 P TM
@@ -423,12 +427,12 @@ object TN13 {
     6 P TM
 }
 
-MQ01 <|-- TN13 #Blue
-MQ03 <|-- TN13 #Blue : ou MQ18 fortement conseillée
-MQ18 <|-- TN13 #Blue : ou MQ03 fortement conseillée
-NF04 <|-- TN13 #Blue : ou MQ06 conseillée
-MQ06 <|-- TN13 #Blue : ou NF04 conseillée
-TN12 <|-- TN13 #Blue : conseillée
+MQ01 <|-- TN13 #OrangeRed
+MQ03 <|-- TN13 #OrangeRed : ou MQ18 fortement conseillée
+MQ18 <|-- TN13 #OrangeRed : ou MQ03 fortement conseillée
+NF04 <|-- TN13 #OrangeRed : ou MQ06 conseillée
+MQ06 <|-- TN13 #OrangeRed : ou NF04 conseillée
+TN12 <|-- TN13 #OrangeRed : conseillée
 
 object TN24 {
     6 P TM
